@@ -13,8 +13,11 @@ const commonConfig = defineConfig({
 const libConfig = defineConfig({
   ...commonConfig,
   build: {
-    minify: true,
+    target: "esnext",
+    bundle: true,
+    minify: false,
     lib: {
+      formats: ["es"],
       entry: path.resolve(__dirname, "src/index.ts"),
       name: "VueToastification",
       fileName: format => `index.${format}.js`,

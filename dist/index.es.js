@@ -1,11 +1,7 @@
-var __defProp = Object.defineProperty;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __publicField = (obj, key, value) => {
-  __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
-  return value;
-};
-import { defineComponent, toRaw, unref, toRefs, computed, ref, watch, onMounted, onBeforeUnmount, openBlock, createBlock, resolveDynamicComponent, mergeProps, withCtx, createTextVNode, createElementBlock, createElementVNode, normalizeClass, toDisplayString, nextTick, normalizeStyle, createCommentVNode, Fragment, toHandlers, withModifiers, TransitionGroup, renderSlot, reactive, onBeforeMount, renderList, createVNode, createApp, getCurrentInstance, provide, inject } from "vue";
-var index = "";
+import { defineComponent, toRaw, unref, toRefs, computed, ref, watch, onMounted, onBeforeUnmount, openBlock, createBlock, resolveDynamicComponent, mergeProps, withCtx, createTextVNode, createElementBlock, createElementVNode, normalizeClass, toDisplayString, nextTick, normalizeStyle, createCommentVNode, Fragment, toHandlers, withModifiers, TransitionGroup, renderSlot, reactive, onBeforeMount, renderList, createVNode, createApp, getCurrentInstance, provide, inject } from 'vue';
+
+var index = '';
+
 var TYPE = /* @__PURE__ */ ((TYPE2) => {
   TYPE2["SUCCESS"] = "success";
   TYPE2["ERROR"] = "error";
@@ -32,6 +28,7 @@ var EVENTS = /* @__PURE__ */ ((EVENTS2) => {
   return EVENTS2;
 })(EVENTS || {});
 const VT_NAMESPACE = "Vue-Toastification";
+
 const isFunction = (value) => typeof value === "function";
 const isString = (value) => typeof value === "string";
 const isNonEmptyString = (value) => isString(value) && value.trim().length > 0;
@@ -117,10 +114,9 @@ const asContainerProps = (options) => {
   );
   return containerProps;
 };
+
 class EventBus {
-  constructor() {
-    __publicField(this, "allHandlers", {});
-  }
+  allHandlers = {};
   getHandlers(eventType) {
     return this.allHandlers[eventType] || [];
   }
@@ -140,6 +136,7 @@ class EventBus {
 }
 const isEventBusInterface = (e) => ["on", "off", "emit"].every((f) => hasProp(e, f) && isFunction(e[f]));
 const globalEventBus = new EventBus();
+
 const defaultEventBus = () => new EventBus();
 const emptyFunction = () => {
 };
@@ -183,6 +180,7 @@ const TOAST_CONTAINER_DEFAULTS = {
   transition: `${VT_NAMESPACE}__bounce`,
   defaultToastProps: () => ({})
 };
+
 const useDraggable = (el, props) => {
   const { draggablePercent, draggable } = toRefs(props);
   const dragRect = computed(
@@ -264,6 +262,7 @@ const useDraggable = (el, props) => {
   });
   return { dragComplete, beingDragged };
 };
+
 const useFocusable = (el, props) => {
   const { pauseOnFocusLoss } = toRefs(props);
   const focused = ref(true);
@@ -283,6 +282,7 @@ const useFocusable = (el, props) => {
   });
   return { focused };
 };
+
 const useHoverable = (el, props) => {
   const { pauseOnHover } = toRefs(props);
   const hovering = ref(false);
@@ -302,6 +302,7 @@ const useHoverable = (el, props) => {
   });
   return { hovering };
 };
+
 const _hoisted_1$5 = /* @__PURE__ */ createTextVNode(" \xD7 ");
 const _sfc_main$9 = /* @__PURE__ */ defineComponent({
   __name: "VtCloseButton",
@@ -339,6 +340,7 @@ const _sfc_main$9 = /* @__PURE__ */ defineComponent({
     };
   }
 });
+
 var _export_sfc = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -346,7 +348,9 @@ var _export_sfc = (sfc, props) => {
   }
   return target;
 };
+
 const _sfc_main$8 = {};
+
 const _hoisted_1$4 = {
   "aria-hidden": "true",
   focusable: "false",
@@ -354,18 +358,21 @@ const _hoisted_1$4 = {
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 576 512"
 };
-const _hoisted_2$3 = /* @__PURE__ */ createElementVNode("path", {
+const _hoisted_2$3 = /*#__PURE__*/createElementVNode("path", {
   fill: "currentColor",
   d: "M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
 }, null, -1);
 const _hoisted_3$3 = [
   _hoisted_2$3
 ];
+
 function _sfc_render$3(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1$4, _hoisted_3$3);
+  return (openBlock(), createElementBlock("svg", _hoisted_1$4, _hoisted_3$3))
 }
-var ErrorIcon = /* @__PURE__ */ _export_sfc(_sfc_main$8, [["render", _sfc_render$3]]);
+var ErrorIcon = /*#__PURE__*/_export_sfc(_sfc_main$8, [['render',_sfc_render$3]]);
+
 const _sfc_main$7 = {};
+
 const _hoisted_1$3 = {
   "aria-hidden": "true",
   focusable: "false",
@@ -373,18 +380,21 @@ const _hoisted_1$3 = {
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 512 512"
 };
-const _hoisted_2$2 = /* @__PURE__ */ createElementVNode("path", {
+const _hoisted_2$2 = /*#__PURE__*/createElementVNode("path", {
   fill: "currentColor",
   d: "M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"
 }, null, -1);
 const _hoisted_3$2 = [
   _hoisted_2$2
 ];
+
 function _sfc_render$2(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1$3, _hoisted_3$2);
+  return (openBlock(), createElementBlock("svg", _hoisted_1$3, _hoisted_3$2))
 }
-var InfoIcon = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["render", _sfc_render$2]]);
+var InfoIcon = /*#__PURE__*/_export_sfc(_sfc_main$7, [['render',_sfc_render$2]]);
+
 const _sfc_main$6 = {};
+
 const _hoisted_1$2 = {
   "aria-hidden": "true",
   focusable: "false",
@@ -392,18 +402,21 @@ const _hoisted_1$2 = {
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 512 512"
 };
-const _hoisted_2$1 = /* @__PURE__ */ createElementVNode("path", {
+const _hoisted_2$1 = /*#__PURE__*/createElementVNode("path", {
   fill: "currentColor",
   d: "M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
 }, null, -1);
 const _hoisted_3$1 = [
   _hoisted_2$1
 ];
+
 function _sfc_render$1(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1$2, _hoisted_3$1);
+  return (openBlock(), createElementBlock("svg", _hoisted_1$2, _hoisted_3$1))
 }
-var SuccessIcon = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["render", _sfc_render$1]]);
+var SuccessIcon = /*#__PURE__*/_export_sfc(_sfc_main$6, [['render',_sfc_render$1]]);
+
 const _sfc_main$5 = {};
+
 const _hoisted_1$1 = {
   "aria-hidden": "true",
   focusable: "false",
@@ -411,17 +424,19 @@ const _hoisted_1$1 = {
   xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 512 512"
 };
-const _hoisted_2 = /* @__PURE__ */ createElementVNode("path", {
+const _hoisted_2 = /*#__PURE__*/createElementVNode("path", {
   fill: "currentColor",
   d: "M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
 }, null, -1);
 const _hoisted_3 = [
   _hoisted_2
 ];
+
 function _sfc_render(_ctx, _cache) {
-  return openBlock(), createElementBlock("svg", _hoisted_1$1, _hoisted_3);
+  return (openBlock(), createElementBlock("svg", _hoisted_1$1, _hoisted_3))
 }
-var WarningIcon = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render]]);
+var WarningIcon = /*#__PURE__*/_export_sfc(_sfc_main$5, [['render',_sfc_render]]);
+
 const _sfc_main$4 = /* @__PURE__ */ defineComponent({
   __name: "VtIcon",
   props: {
@@ -491,6 +506,7 @@ const _sfc_main$4 = /* @__PURE__ */ defineComponent({
     };
   }
 });
+
 const _sfc_main$3 = /* @__PURE__ */ defineComponent({
   __name: "VtProgressBar",
   props: {
@@ -541,6 +557,7 @@ const _sfc_main$3 = /* @__PURE__ */ defineComponent({
     };
   }
 });
+
 const _hoisted_1 = ["role"];
 const _sfc_main$2 = /* @__PURE__ */ defineComponent({
   __name: "VtToast",
@@ -658,6 +675,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
     };
   }
 });
+
 const _sfc_main$1 = /* @__PURE__ */ defineComponent({
   __name: "VtTransition",
   props: {
@@ -690,6 +708,7 @@ const _sfc_main$1 = /* @__PURE__ */ defineComponent({
     };
   }
 });
+
 const __default__ = {
   devtools: {
     hide: true
@@ -847,8 +866,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
+
 function mountPlugin(options) {
-  const { shareAppContext, onMounted: onMounted2, ...basePluginOptions } = options;
+  const { shareAppContext, onMounted, ...basePluginOptions } = options;
   const containerProps = asContainerProps(basePluginOptions);
   const app = createApp(_sfc_main, {
     ...containerProps
@@ -862,8 +882,8 @@ function mountPlugin(options) {
     app.config.globalProperties = userApp.config.globalProperties;
   }
   const component = app.mount(document.createElement("div"));
-  if (!isUndefined(onMounted2)) {
-    onMounted2(component, app);
+  if (!isUndefined(onMounted)) {
+    onMounted(component, app);
   }
 }
 const createInterface = (events) => {
@@ -905,6 +925,7 @@ const buildInterface = (globalOptions = {}, mountContainer = true) => {
   }
   return createInterface(events);
 };
+
 const toastInjectionKey = Symbol("VueToastification");
 const createMockToastInstance = () => {
   const toast = () => console.warn(`[${VT_NAMESPACE}] This plugin does not support SSR!`);
@@ -936,8 +957,9 @@ const useToast = (eventBus) => {
   const toast = getCurrentInstance() ? inject(toastInjectionKey, void 0) : void 0;
   return toast ? toast : createToastInstance(globalEventBus);
 };
+
 const VueToastificationPlugin = (App, options) => {
-  if ((options == null ? void 0 : options.shareAppContext) === true) {
+  if (options?.shareAppContext === true) {
     options.shareAppContext = App;
   }
   const inter = createToastInstance({
@@ -946,4 +968,5 @@ const VueToastificationPlugin = (App, options) => {
   });
   App.provide(toastInjectionKey, inter);
 };
+
 export { EventBus, POSITION, TYPE, createToastInstance, VueToastificationPlugin as default, provideToast, useToast };
