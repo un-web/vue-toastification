@@ -20,7 +20,7 @@
     "lint:eslint": "NODE_ENV=production eslint --ext vue,ts,tsx .",
     "lint:staged": "pnpm run lint:tsc && pnpm run lint:fix",
     "preview": "NODE_ENV=production vite preview --port 3000 demo",
-    "prepublishOnly": "pnpm run lint && pnpm run test && pnpm run build",
+    "prepublishOnly": "pnpm run lint && pnpm run test && pnpm run build"
   },
   "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
