@@ -4,6 +4,7 @@
   "private": false,
   "description": "Toasts for Vue made easy!",
   "author": "Gustavo Maronato",
+  "type": "module",
   "scripts": {
     "dev": "MODE=demo pnpm run vite",
     "prebuild": "rimraf ./dist",
@@ -22,14 +23,7 @@
     "preview": "NODE_ENV=production vite preview --port 3000 demo",
     "prepublishOnly": "pnpm run lint && pnpm run test && pnpm run build"
   },
-  "main": "./dist/index.umd.js",
   "module": "./dist/index.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js"
-    }
-  },
   "typings": "dist/types/index.d.ts",
   "types": "dist/types/index.d.ts",
   "style": "dist/index.css",

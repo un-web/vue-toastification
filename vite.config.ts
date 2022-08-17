@@ -14,7 +14,6 @@ const libConfig = defineConfig({
   ...commonConfig,
   build: {
     target: "esnext",
-    bundle: true,
     minify: false,
     lib: {
       formats: ["es"],
@@ -27,15 +26,10 @@ const libConfig = defineConfig({
       // into your library
       external: ["vue"],
       output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
-        globals: {
-          vue: "Vue",
-        },
         // Use `index.css` for css
         assetFileNames: assetInfo => {
           if (assetInfo.name == "style.css") return "index.css"
-          return assetInfo.name
+          return assetInfo.name || ''
         },
       },
     },
@@ -56,7 +50,7 @@ export default defineConfig(({ command }) => {
 
   if (executionMode === "demo") {
     return { ...demoConfig, mode }
-  } else if (executionMode === "lib") {
-    return { ...libConfig, mode }
-  }
+  } 
+
+  return { ...libConfig, mode }
 })
